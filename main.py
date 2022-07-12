@@ -2,27 +2,27 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-#import module
 import math
 
 print("Substitude the numbers according to this formula:")
 print("ax^2 + bx + c")
 
-a = input("a = ")
-b = input("b = ")
-c = input("c = ")
+a = float(input("a = "))
+b = float(input("b = "))
+c = float(input("c = "))
 
 #Equation: (-b±√(b^2-4ac))/2a
+
 try:
-    d = math.sqrt((float(b)**2)-(4*float(a)*float(c)))
+    delta = math.sqrt((b**2)-(4*a*c))
 
-    ans_1 = (-float(b)+d)/(2*float(a))
-    ans_2 = (-float(b)-d)/(2*float(a))
+    solution_1 = (-b+delta)/(2*a)
+    solution_2 = (-b-delta)/(2*a)
 
-    if ans_1 == ans_2:
-        print(f'x = {ans_1}')
+    if solution_1 == solution_2:
+        print(f'x = {solution_1}')
     else:
-        print(f'x = {ans_1} or')
-        print(f'x = {ans_2}')
+        print(f'x = {solution_1} or')
+        print(f'x = {solution_2}')
 except:
     print("Error occured, please try again.")
